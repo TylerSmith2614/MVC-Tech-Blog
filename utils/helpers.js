@@ -4,6 +4,7 @@ module.exports = {
     return date.toLocaleDateString();
   },
   format_time: (date) => {
+    // Format time as HH:MM:SS
     return date.toLocaleTimeString();
   },
 };

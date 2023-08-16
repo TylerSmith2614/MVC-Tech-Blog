@@ -1,0 +1,102 @@
+:root {
+  --primary: #003038; /* Pastel Blue */
+  --secondary: #f0b7a4; /* Pastel Peach */
+  --tertiary: black; /* Pastel Lavender */
+  --light-dark: #d8d8d8; /* Light Gray */
+  --dark: #201110;
+  --border-radius: 0.3rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary);
+  margin: 0;
+  padding: 0;
+  font-family: "IBM Plex Sans", sans-serif;
+  color: var(--dark);
+  line-height: 1.5;
+  font-size: 24px;
+}
+
+h1,
+h2,
+h3,
+h5,
+h6 {
+  font-weight: 700;
+  margin: 0;
+  color: var(--dark);
+  line-height: 1.25;
+}
+
+.link-color,
+.link,
+.login-link {
+  color: var(--tertiary);
+}
+
+.hero {
+  padding: 3% 4%;
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+.app-title {
+  font-size: 3rem;
+  background-color: var(--secondary);
+  color: var(--primary);
+  padding: 0 10px;
+  display: inline-block;
+  border-radius: var(--border-radius);
+  box-shadow: 6px 5px var(--light-dark);
+}
+
+.btn,
+.btn-back {
+  font-size: 1.3rem;
+  text-decoration: none;
+  padding: 6px 5px;
+  width: 100%;
+  display: block;
+  margin: 5px 0;
+  border-radius: var(--border-radius);
+  color: white;
+  border: none;
+  outline: none;
+  background-color: var(--tertiary);
+  transform: translate(-1px, -1px);
+}
+
+.btn:hover,
+.btn-back:hover {
+  color: var(--primary);
+  background-color: var(--secondary);
+  transform: translate(0, 0);
+  box-shadow: 2px 2px var(--dark);
+}
+
+.card,
+.list-item {
+  border-radius: var(--border-radius);
+  border: 2px solid var(--light-dark);
+  margin: 0 0 20px 0;
+}
+
+.card-header {
+  color: var(--primary);
+  background-color: var(--light-dark);
+}
+
+.list-item {
+  background-color: var(--light-dark);
+  color: var(--primary);
+}
+
+.list-item:hover {
+  background-color: var(--dark);
+}
+
+/* Add more existing styles, media queries, and other rules as needed */
