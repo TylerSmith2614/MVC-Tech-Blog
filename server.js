@@ -9,7 +9,7 @@ const hbs = exphbs.create({ helpers });
 
 // Sets up the Express App
 const app = express();
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "app", "views"));
 
 const PORT = process.env.PORT || 3001;
 
