@@ -1,9 +1,7 @@
-import { Router } from "express";
-import { Post, User, Comment } from "../../models";
-
-import withAuth from "../../utils/auth";
-
-const router = Router();
+const express = require("express");
+const router = express.Router();
+const { Post, User, Comment } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
@@ -123,4 +121,4 @@ router.delete("/:id", withAuth, async (req, res) => {
   }
 });
 
-export default router;
+module.exports = router;

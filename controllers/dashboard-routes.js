@@ -1,8 +1,7 @@
-import { Router } from "express";
-import { Post, User, Comment } from "../models";
-import withAuth from "../utils/auth";
-
-const router = Router();
+const express = require("express");
+const router = express.Router();
+const { Post, User, Comment } = require("../models");
+const withAuth = require("../utils/auth");
 
 router.get("/", withAuth, async (req, res) => {
   try {
@@ -87,4 +86,4 @@ router.get("/new", (req, res) => {
   res.render("new-post");
 });
 
-export default router;
+module.exports = router;

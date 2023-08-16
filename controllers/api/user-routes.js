@@ -1,7 +1,7 @@
-import { Router } from "express";
-import { User, Post, Comment } from "../../models";
+const express = require("express");
+const router = express.Router();
+const { Post, User, Comment } = require("../../models");
 
-const router = Router();
 
 router.get("/", async (req, res) => {
   try {
@@ -142,4 +142,4 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-export default router;
+module.exports = router;
