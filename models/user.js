@@ -39,7 +39,7 @@ User.init(
     // Email is required, unique, and must be in an email format
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       unique: true,
       validate: {
         isEmail: true,
