@@ -9,7 +9,7 @@ class User extends Model {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-// sets the columns in the user table, with the id column being the primary key and auto-incrementing
+
 User.init(
   {
     id: {
@@ -28,7 +28,6 @@ User.init(
       },
     },
     // Password is required, must be unique, and must be 8+ characters
-
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -48,12 +47,26 @@ User.init(
     },
   },
   {
+    // These hooks will hash the password before it is updated or created for security
+    hooks: {
+      async beforeCreate(newUserData) {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+      async beforeUpdate(updatedUserData) {
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
+          10
+        );
+        return updatedUserData;
+      },
+    },
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "post",
+    modelName: "user",
   }
-  // sets up a hook to hash the password before it is created or updated
 );
 
 module.exports = User;
