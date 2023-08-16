@@ -8,11 +8,7 @@
     "start": "node server.js",
     "watch": "nodemon server.js",
     "seed": "node seeds/seeds.js",
-    "build": "npm run build-assets",
-    "build-assets": "npm run build-css && npm run build-js && npm run build-images",
-    "build-css": "node-sass Assets/css/main.scss public/css/style.css --output-style compressed",
-    "build-js": "webpack --config webpack.config.prod.js",
-    "build-images": "imagemin Assets/images/* --out-dir=public/images"
+ 
   },
   "author": "Tyler Smith",
   "dependencies": {
