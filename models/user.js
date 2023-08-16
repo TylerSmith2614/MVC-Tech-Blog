@@ -27,7 +27,7 @@ User.init(
         len: [8],
       },
     },
-        // Password is required, must be unique, and must be 8+ characters
+    // Password is required, must be unique, and must be 8+ characters
 
     password: {
       type: DataTypes.STRING,
@@ -37,7 +37,7 @@ User.init(
         len: [8],
       },
     },
-        // Email is required, unique, and must be in an email format
+    // Email is required, unique, and must be in an email format
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -46,8 +46,13 @@ User.init(
         isEmail: true,
       },
     },
-
   },
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "post",
+  }
   // sets up a hook to hash the password before it is created or updated
 );
 
