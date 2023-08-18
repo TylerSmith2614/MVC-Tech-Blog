@@ -12,7 +12,7 @@ const sequelize = require("./config/connection");
 
 // Sets up the Express App
 const app = express();
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname));
 
 const PORT = process.env.PORT || 3001;
 
@@ -34,7 +34,7 @@ app.use(session(sess));
 // Setting up the middleware for express
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "./views")));
+app.use(express.static(path.join(__dirname, "public")));
 
 // setting up express to use handlebars as its view engine
 app.engine("handlebars", hbs.engine);
