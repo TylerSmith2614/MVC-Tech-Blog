@@ -9,14 +9,11 @@ const helpers = require("./utils/helpers");
 // Sets up sequelize
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
-
 // Sets up the Express App
 const app = express();
-app.set("views", path.join(__dirname));
+const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
-
-const PORT = process.env.PORT || 3001;
 
 // Setting up the middleware for express-session
 const sess = {
