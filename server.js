@@ -34,8 +34,7 @@ app.use(session(sess));
 // Setting up the middleware for express
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
-
+app.set("views", path.join(__dirname, "./views"));
 // setting up express to use handlebars as its view engine
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
