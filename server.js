@@ -35,7 +35,7 @@ app.set("view engine", "handlebars");
 // Setting up the middleware for express
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "views")));
+app.use(express.static(path.join(__dirname, 'views')));
 
 app.use(routes);
 // Starts the server to begin listening
