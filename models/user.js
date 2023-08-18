@@ -24,19 +24,18 @@ User.init(
       allowNull: false,
       unique: true,
       validate: {
-        len: [8],
+        len: [5],
       },
     },
     // Password is required, must be unique, and must be 8+ characters
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
       validate: {
-        len: [8],
+        len: [5],
       },
     },
-    // Email is required, unique, and must be in an email format
+    // Email is not required, unique, and must be in an email format
     email: {
       type: DataTypes.STRING,
       allowNull: true,

@@ -1,15 +1,15 @@
-<div class="comments">
-  {{#each this}}
-    <div class="card">
-        <h3 class="card-header"></h3>
-        <section class="comment card-body">
-            <div class="text">
-                {{comment_text}}
-            </div>
-            <div class="meta">
-                -{{user.username}},  {{format_date created_at}} {{format_time created_at}}
-            </div>
-        </section>
-    </div>
-  {{/each}}
-</div>
+{{#each this}}
+  <div class="card">
+    <h3 class="card-header">{{user.username}}</h3>
+    <section class="comment card-body">
+      <div class="text">
+        {{comment_text}}
+      </div>
+      <div class="meta">
+        -{{user.username}}, {{format_date created_at}} {{format_time created_at}}
+      </div>
+    </section>
+  </div>
+  {{else}}
+  <p>No comments available.</p>
+{{/each}}
